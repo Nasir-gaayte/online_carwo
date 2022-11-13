@@ -1,0 +1,22 @@
+.bdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}    
+
+.bdiv button{
+    margin-top: 25px;
+    margin: 19px;
+    border-radius: 30px;
+    border-color: antiquewhite;
+    padding: 15px;
+}
+
+.bdiv a{
+    text-decoration: none;
+    color: brown;
+    background-color: blanchedalmond;
+}
+.bcat{
+    border-radius: 25%;
+}
