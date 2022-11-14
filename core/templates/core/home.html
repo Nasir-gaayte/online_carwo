@@ -64,17 +64,26 @@
         <br>
         <section class="sec">
             <div class="torow row ">
-                <div class="col-2">
-                    <div class="col" style="background-color: rgb(223, 89, 89); height: 500px;">
-                        <button class="btn">
-                            hala
-                        </button>
+                <div class="  col-2">
+                    <div class="ss" style="background-color: rgb(223, 89, 89); height: auto; margin:2rem;">
+                        <div class="">
+                            <a class="side-p" href="">
+                                {% for prom in proms %}
+                                <div class="card" style="width: 8rem;">
+                                    <img src="{{prom.image.url}}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">{{prom.description}}</p>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-10">
                     <div class="homecover ">
                         <div class=" cover-div">
-                            <div class="card" style="width: 18rem;">
+                            <div class="card " >
                                 <img src="/static/images/backgound1.webp" class="card-img-top" alt="...">
                                 <div class="card-body">
                                   <h5 class="card-title">Card title</h5>

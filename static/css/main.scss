@@ -37,7 +37,9 @@ body {
     
 // }
 
-
+.side-p{
+    margin:0.5rem;
+}
 
 .homecover{
     display: flex;
@@ -52,15 +54,23 @@ body {
     overflow: hidden;
 }
 
+.card {
+    
+    margin: 0.5rem;
 
+}
 .cover-div{
     display: grid;
     grid-template-columns: repeat(3,auto);
-    margin: 2rem;
+    margin: 1rem;
+    align-content: space-around;
     color: rgb(105, 153, 61);
+   
 }
 @media only screen and (max-width: 880px){
     body{
+        
+        
         .cover-div{
             display: grid;
             grid-template-columns: repeat(2,auto);
@@ -70,11 +80,18 @@ body {
 
 @media only screen and (max-width: 600px){
     body{
-        margin:1.5em 5em;
+        margin:0.5em 1em;
 
+
+        .side-p{
+            column-width: 2em;
+        }
+        }
         .cover-div{
             display: grid;
-            grid-template-columns: repeat(1,auto);
+            width: 4rem;
+            grid-template-columns: repeat(1,auto) ;
+            column-width: 2em;
         }
     }
 }

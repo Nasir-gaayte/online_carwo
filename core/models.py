@@ -9,3 +9,12 @@ class CategoryModel(models.Model):
     
     def __str__(self) -> str:
         return self.name
+    
+    
+    
+class PremotionModel(models.Model):
+    image = models.ImageField()
+    description = models.TextField(max_length=250)
+    
+    def __str__(self) -> str:
+        return self.description    

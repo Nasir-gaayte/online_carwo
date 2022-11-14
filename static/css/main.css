@@ -33,6 +33,10 @@ body {
   border-radius: 25%;
 }
 
+.side-p {
+  margin: 0.5rem;
+}
+
 .homecover {
   display: flex;
   top: 0;
@@ -46,10 +50,15 @@ body {
   overflow: hidden;
 }
 
+.card {
+  margin: 0.5rem;
+}
+
 .cover-div {
   display: grid;
   grid-template-columns: repeat(3, auto);
-  margin: 2rem;
+  margin: 1rem;
+  align-content: space-around;
   color: rgb(105, 153, 61);
 }
 
@@ -61,10 +70,20 @@ body {
 }
 @media only screen and (max-width: 600px) {
   body {
-    margin: 1.5em 5em;
+    margin: 0.5em 1em;
+  }
+  body .ss {
+    display: grid;
+    -moz-column-width: 4rem;
+         column-width: 4rem;
+    width: 4rem;
+    height: 100%;
   }
   body .cover-div {
     display: grid;
+    width: 4rem;
     grid-template-columns: repeat(1, auto);
+    -moz-column-width: 2em;
+         column-width: 2em;
   }
 }/*# sourceMappingURL=main.css.map */
