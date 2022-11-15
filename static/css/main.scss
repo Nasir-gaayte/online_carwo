@@ -16,6 +16,17 @@ body {
     align-items: center;
 }    
 
+@media only screen and (max-width:600px){
+    body{
+        .top{
+            display: inline;
+        }
+        .bdiv{
+            display: grid;
+        }
+    }
+}
+
 .bdiv button{
     margin-top: 25px;
     margin: 19px;
@@ -37,12 +48,12 @@ body {
     
 // }
 
-.side-p{
-    margin:0.5rem;
-}
+
 
 .homecover{
     display: flex;
+    flex-direction: column;
+    align-content: flex-start;
     top: 0;
     left: 0;
     background-color: antiquewhite;
@@ -56,45 +67,67 @@ body {
 
 .card {
     
-    margin: 0.5rem;
-
+    margin: .5rem;
 }
 .cover-div{
     display: grid;
     grid-template-columns: repeat(3,auto);
-    margin: 1rem;
+    margin: 2rem;
     align-content: space-around;
     color: rgb(105, 153, 61);
    
 }
-@media only screen and (max-width: 880px){
+@media only screen and (max-width: 800px){
     body{
-        
-        
         .cover-div{
             display: grid;
             grid-template-columns: repeat(2,auto);
         }
+        .side-p{
+            display: grid;
+            margin-left: 0;
+            justify-content: start;
+            font-size: small;
+        }
     }
 }    
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 740px){
     body{
-        margin:0.5em 1em;
-
+        margin:0%;
+        .homecover{
+            align-content: flex-start;
+        }
 
         .side-p{
-            column-width: 2em;
+            display: grid;
+            margin-left: 0;
+            justify-content: start;
+            font-size: small;
         }
-        }
+
         .cover-div{
             display: grid;
-            width: 4rem;
-            grid-template-columns: repeat(1,auto) ;
-            column-width: 2em;
+            grid-template-columns: repeat(1,auto);
+            margin-top: 5px;
+            align-content: center;
+            justify-content: end;
+            align-items: start;
+            justify-items: center;
+            margin: 0%;
+            padding: 0%;
         }
-    }
+        .towor{
+            display: flex;
+            justify-content: space-between;
+        }
+        .col-2{
+            display: grid;
+        }
+
+     }
 }
+
 
 
 

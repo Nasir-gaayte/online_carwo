@@ -13,7 +13,7 @@
 <body>
     <nav class="navbar navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Carwo Online</a>
+          <a class="navbar-brand" href="{% url 'home' %}">Carwo Online</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -25,11 +25,26 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Link</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+                {% endif %}
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Dropdown
@@ -56,20 +71,21 @@
 
     {% block content %}
     <div class="mt-5">
-        <div class="bdiv">
-            {% for category in categores %}
-            <button class="bcat" type="submit"><a href="">{{category.name}}</a></button>
-            {% endfor %}
+        <div class="top row">
+            <div class="bdiv">
+                {% for category in categores %}
+                <button class="bcat" type="submit"><a href="">{{category.name}}</a></button>
+                {% endfor %}
+            </div>
         </div>
         <br>
         <section class="sec">
             <div class="torow row ">
-                <div class="  col-2">
-                    <div class="ss" style="background-color: rgb(223, 89, 89); height: auto; margin:2rem;">
-                        <div class="">
-                            <a class="side-p" href="">
+                <div class="col-2" id="side">
+                        <div class="side-p" >
+                            <a href="">
                                 {% for prom in proms %}
-                                <div class="card" style="width: 8rem;">
+                                <div class="card" >
                                     <img src="{{prom.image.url}}" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <p class="card-text">{{prom.description}}</p>
@@ -77,13 +93,13 @@
                                 </div>
                                 {% endfor %}
                             </a>
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="col-10">
                     <div class="homecover ">
                         <div class=" cover-div">
-                            <div class="card " >
+                            <div class="card " style="width: 18rem;">
                                 <img src="/static/images/backgound1.webp" class="card-img-top" alt="...">
                                 <div class="card-body">
                                   <h5 class="card-title">Card title</h5>
