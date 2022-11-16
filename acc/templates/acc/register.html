@@ -4,6 +4,9 @@
   <div class="mt-5 container">
     <h1 style="color: rgba(248, 180, 34, 0.897);">Regiter</h1>
     <div class="card">
+        {% for message in messages %}
+        <h1>{{message}}</h1>
+        {% endfor %}
         <form style="background-color: rgb(161, 148, 148);" class="card" method="POST">
             {% csrf_token %}
             {% bootstrap_form form %}

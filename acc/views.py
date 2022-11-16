@@ -2,15 +2,18 @@ from django.shortcuts import render, redirect
 from acc.forms import UserForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout,login,authenticate
+from django.contrib import messages
 # Create your views here.
 
 
 def register_req(request):
     if request.method == "POST":
-        form = UserForm()   
+        form = UserForm(request.POST)   
         if form.is_valid():
             form.save()
             return redirect('login')
+        else:
+            messages.error(request,'something gose wrong')
     form = UserForm()    
     return render(request,'acc/register.html',{
         'form':form,
