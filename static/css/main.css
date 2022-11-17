@@ -142,6 +142,22 @@ body {
   body {
     margin: 0%;
   }
+  body .add-cl {
+    height: 100%;
+    width: 300px;
+    font-weight: 50;
+    font-size: 0.5rem;
+  }
+  body .add-cl .card {
+    display: flex;
+    justify-items: center;
+    height: 100%;
+    width: 300px;
+  }
+  body .add-cl .card .form {
+    font-weight: 50;
+    font-size: small;
+  }
   body .homecover {
     display: flex;
     align-content: flex-start;

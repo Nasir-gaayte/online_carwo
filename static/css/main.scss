@@ -89,6 +89,7 @@ body {
 }
 @media only screen and (max-width: 800px){
     body{
+        
         .bdiv{
             display: grid;
             grid-template-columns: repeat(3,auto);
@@ -159,13 +160,35 @@ body {
             }    
         }  
         
-        }    
+        }
+
+        
     }
 }    
 
 @media only screen and (max-width: 520px){
     body{
         margin:0%;
+        .add-cl{
+            height: 100%;
+            width: 300px;
+            font-weight: 50;
+            font-size: 0.5rem;
+            
+            .card {
+                display: flex;
+                justify-items: center;
+                height: 100%;
+                width: 300px;
+                
+
+                .form{
+                    font-weight: 50;
+                    font-size: small;
+                    
+                }
+            }
+        }    
         .homecover{
             display: flex;
             align-content: flex-start;

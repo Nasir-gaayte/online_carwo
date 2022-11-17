@@ -1,5 +1,5 @@
 from django.contrib import admin
-from  core.models import CategoryModel, PremotionModel
+from  core.models import CategoryModel, PremotionModel, ShopModel
 # Register your models here.
 
 
@@ -7,3 +7,4 @@ from  core.models import CategoryModel, PremotionModel
 
 admin.site.register(CategoryModel)
 admin.site.register(PremotionModel)
+admin.site.register(ShopModel)
