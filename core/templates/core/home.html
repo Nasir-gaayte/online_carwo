@@ -102,17 +102,17 @@
                     <div class="homecover ">
                         <div class=" cover-div">
                           {% for shop in shops %}
-                            <div class="card " style="width: 18rem;">
+                            <div class="card " >
                                 <img src="{{shop.title_image.url}}" class="card-img-top" alt="...">
                                 <div class="card-body">
                                   <h4 class="card-title">category :- {{shop.category}}</h4>
                                   <h5 class="card-title">{{shop.title}}</h5>
                                   <p class="card-text"</p>
-                                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                                  <a href="{% url 'detail' shop.id %}" class="btn btn-primary">view</a>
+                                  <button> <a href="{% url 'detail' shop.id %}">view</a> </button>
                                 </div>
                               </div>
                               {% endfor %}
-                            
                         </div>
                     </div>
                 </div>

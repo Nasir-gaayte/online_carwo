@@ -23,7 +23,7 @@ def add_shop(request):
         username = request.user
         print(username)
         title_image = request.FILES.get('title_image')
-        images = request.FILES.getlist ('images')
+        images = request.FILES.get ('images')
         category = CategoryModel.objects.get(id = data['category']) 
          
         for shop in shops:
@@ -37,3 +37,10 @@ def add_shop(request):
             )
         return redirect ('home')
     return render(request,'core/add_shop.html',{'categores':categores,})
+
+
+def detail(request, id):
+    shop = ShopModel.objects.get(pk = id)
+    
+    return render(request,'core/detail.html',{'shop':shop})
+    

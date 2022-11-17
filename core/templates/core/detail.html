@@ -1,0 +1,32 @@
+{% extends "core/home.html" %}
+{% load django_bootstrap5 %}
+{% block content %}
+  <div class="add-cl mt-5">
+    <div class="card container " >
+      <br>
+        <h4 style="margin-top: 50px;" >full details </h4>
+        <div class="container"">
+            <div class="torow">
+          
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ shop.title_image.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">title {{shop.title}}</h5>
+                      <p class="card-text">{{shop.description}}</p>
+                    </div>
+                        {% for i in images %}
+                        <ul class="list-group list-group-flush">
+                        <li class="list-group-item"> <img src="{{i.url}}" alt=""> </li>
+                        </ul>
+                        {% endfor %}
+                    <div class="card-body">
+                      <a href="#" class="card-link">Card link</a>
+                      <a href="#" class="card-link">Another link</a>
+                    </div>
+                  </div>
+          
+            </div>
+        </div>
+    </div>
+  </div>
+{% endblock content %}
