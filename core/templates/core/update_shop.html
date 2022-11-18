@@ -1,0 +1,41 @@
+{% extends "core/home.html" %}
+{% load django_bootstrap5 %}
+{% block content %}
+  <div class="add-cl mt-5">
+    <div class="card container " >
+      <br>
+        <h4 style="margin-top: 50px;" >update Your shop </h4>
+        <div class="container"">
+          <form class="row g-3 container titless " method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group m-3">
+              <label >Title</label> 
+              <input required name="title" type="text" placeholder="Add your title">
+          </div>
+            <div class="form-group m3">
+                <label >title image</label>
+                <input required name="title_image" type="file" class="form-control-file">
+            </div>
+            <div class="form-group m-3">
+                <label  >Select Category</label>
+              <select name="category" class="form-control" >
+                <option value="none">Select a category...</option>
+                {% for category in categores %}
+                <option value="{{category.id}}">{{category.name}}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="form-group m3">
+                <label > more images</label>
+                <input  name="images" type="file" multiple class="form-control-file">
+            </div>
+            <div class="form-group m-3">
+                <label >Description</label> 
+                <input required name="description" type="text" placeholder="Add your descriptions">
+            </div>
+            <button class="btn btn-dark btn-block" type="submit">ADD</button>
+        </form>
+        </div>
+    </div>
+  </div>
+{% endblock content %}

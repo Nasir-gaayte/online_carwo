@@ -20,8 +20,12 @@
                         </ul>
                         {% endfor %}
                     <div class="card-body">
-                      <a href="#" class="card-link">Card link</a>
-                      <a href="#" class="card-link">Another link</a>
+                      {% if user.is_authenticated %}
+                        {% if shop.username.id == user.id %}
+                          <a href="{% url 'update_shop' shop.id %}" class="card-link">update</a>
+                          <a href="#" class="card-link">Another link</a>
+                          {% endif %}
+                      {% endif%}
                     </div>
                   </div>
           

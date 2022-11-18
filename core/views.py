@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from core.models import CategoryModel, PremotionModel, ShopModel
+from core.forms import ShopForm
 # Create your views here.
 
 
@@ -43,4 +44,14 @@ def detail(request, id):
     shop = ShopModel.objects.get(pk = id)
     
     return render(request,'core/detail.html',{'shop':shop})
-    
+
+
+def update_shop(request, id):
+    shop = ShopModel.objects.get(pk =id)
+    if request.method == "POST":
+        form = ShopForm(request.POST, instance=shop)
+        if form.is_valid():
+            form.save()  
+            return redirect ('home')
+    form = ShopForm(instance=shop)
+    return render(request,'core/update_shop.html',{'form':form})    
