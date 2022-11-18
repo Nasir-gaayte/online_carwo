@@ -54,4 +54,6 @@ def update_shop(request, id):
             form.save()  
             return redirect ('home')
     form = ShopForm(instance=shop)
-    return render(request,'core/update_shop.html',{'form':form})    
+    return render(request,'core/update_shop.html',{
+        'form':form,
+        })    
